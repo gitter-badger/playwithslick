@@ -8,6 +8,6 @@ trait Connection extends Profile{
   
  import profile.simple._
  
-  def dbObject = Database.forDataSource(DB.getDataSource())
+  def dbObject() = Database.forDataSource(DB.getDataSource())
   
 }

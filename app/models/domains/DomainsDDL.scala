@@ -6,13 +6,15 @@ import play.api.Logger
 import play.api.db.DB
 import play.api.Play.current
 import play.api.Play
+import utils.Connection
 
-class DomainsDDL(override val profile: JdbcProfile) extends DomainsComponent with Profile {
+class DomainsDDL(override val profile: JdbcProfile) extends DomainsComponent with Connection with Profile {
   import profile.simple._
 
   def create = {
     try {
-      Database.forDataSource(DB.getDataSource()).withSession { implicit session =>
+      
+      dbObject.withSession { implicit session =>
         (knols.ddl).create
         Logger.info("All tables have been created")
 

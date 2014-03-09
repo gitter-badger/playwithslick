@@ -8,14 +8,14 @@ import models.domains.Profile
 import utils.Connection
 import utils.SlickDBDriver
 
-trait KnolDALComponent extends DomainsComponent with Profile {
+trait KnolDALComponent extends DomainsComponent  with Connection with Profile{
   def insertKnol(knol: Knol): Int
   def updateKnol(knol: Knol): Int
   def deleteKnol(knolId: Int): Int
   def getKnols: List[Knol]
 
 }
-class KnolDAL(override val profile: JdbcProfile) extends KnolDALComponent with Connection {
+class KnolDAL(override val profile: JdbcProfile) extends KnolDALComponent {
 
   import profile.simple._
 
