@@ -1,9 +1,13 @@
-import play.api._
-import play.api.Logger
-import utils.SlickDBDriver
-import com.typesafe.config.ConfigFactory
 import java.io.File
+
+import com.typesafe.config.ConfigFactory
+
 import models.domains.DomainsDDL
+import play.api.Application
+import play.api.Configuration
+import play.api.GlobalSettings
+import play.api.Logger
+import play.api.Mode
 
 object Global extends GlobalSettings {
 

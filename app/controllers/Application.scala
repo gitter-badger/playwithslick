@@ -1,19 +1,26 @@
 package controllers
 
-import play.api._
-import play.api.mvc._
-import models.domains.Knol
-import models.dals.KnolDAL
-import models.dals.KnolDALComponent
+import models.services.KnolService
+import models.services.KnolServiceComponent
+import play.api.mvc.Action
+import play.api.mvc.Controller
 
-class Application(knolDAL: KnolDALComponent) extends Controller {
+class Application(knolDAL: KnolServiceComponent) extends Controller {
 
   def index = Action {
-    val testKnol = Knol("sky", "sky@knoldus.com", "consultant")
-    knolDAL.insertKnol(testKnol)
-    val knolList = knolDAL.getKnols.toString
-    Ok(knolList)
+    Ok(views.html.index("ok"))
   }
+
+  def showKnols = Action {
+    val knols = knolDAL.getKnolList
+    Ok(knols.toString)
+  }
+
+  def addKnol = TODO
+
+  def deleteKnol = TODO
+
+  def updateKnol = TODO
 }
 
-object Application extends Application(KnolDAL)
+object Application extends Application(KnolService)

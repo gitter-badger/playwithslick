@@ -1,12 +1,12 @@
 package models.dals
 
-import models.domains.Knol
-import models.domains.DomainsComponent
-import models.domains.Profile
 import scala.slick.driver.JdbcProfile
+
+import models.domains.DomainsComponent
+import models.domains.Knol
+import models.domains.Profile
+import utils.Connection
 import utils.SlickDBDriver
-import play.api.db.DB
-import play.api.Play.current
 
 trait KnolDALComponent extends DomainsComponent with Profile {
   def insertKnol(knol: Knol): Int
@@ -15,11 +15,9 @@ trait KnolDALComponent extends DomainsComponent with Profile {
   def getKnols: List[Knol]
 
 }
-class KnolDAL(override val profile: JdbcProfile) extends KnolDALComponent {
+class KnolDAL(override val profile: JdbcProfile) extends KnolDALComponent with Connection {
 
   import profile.simple._
-
-  lazy val dbObject = Database.forDataSource(DB.getDataSource())
 
   def insertKnol(knol: Knol): Int = {
     dbObject.withSession { implicit session =>
