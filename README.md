@@ -1,6 +1,6 @@
 This is Play  & Slick template.In this template, I am going to describe how to write a web application with their  unit tests and integration tests.I am working with  Test driven development environment so my primary focus is unit test for all functionality.
 
-Technology overview:
+Technology overview:<br>
 Lets start with <b>Play framework</b> . Play is based on a lightweight, stateless, web-friendly architecture.
 Built on Akka, Play provides predictable and minimal resource consumption (CPU, memory, threads) for highly-scalable applications.For more info: https://www.playframework.com
 
@@ -11,4 +11,4 @@ Built on Akka, Play provides predictable and minimal resource consumption (CPU, 
 <b>H2</b> is a relational database management system written in Java. It is used for unit testing of all database
 queries.
 
-<b>Scala test</b> Scala test a testing framework.
+<b>Scala test</b> is  a testing framework.It is used for unit testing.
