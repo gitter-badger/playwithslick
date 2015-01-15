@@ -11,3 +11,6 @@ Built on Akka, Play provides predictable and minimal resource consumption (CPU, 
 <b>H2</b> is a relational database management system written in Java. It is basically  used for unit testing of all database queries.
 
 <b>Scala test</b> is  a testing framework.
+
+
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/satendrakumar06/playwithslick?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
